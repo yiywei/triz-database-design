@@ -4,9 +4,14 @@ The purpose of this repository is to translate the database design into SQL quer
 
 ## Tech Stack
 ```
-- Python 3.13
-- Django 5.1.7
+- Python 3.13 
+- Django 5.1.7 
 - MySQLClient 2.2.7
-- MySQL Database System
+- MySQL 8.0 or higher
 - SQL Backend Development
+```
+## Installation
+```
+- triz 
+- triz_django
 ```
