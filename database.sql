@@ -76,3 +76,21 @@ CREATE TABLE triz_matrix (
     FOREIGN KEY (contradiction_id) REFERENCES contradictions(contradiction_id),
     FOREIGN KEY (principle_id) REFERENCES principles(principle_id)
 );
+
+LOAD DATA INFILE '/triz_data/TRIZ_parameters.csv'
+INTO TABLE parameters
+FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS;
+
+LOAD DATA INFILE '/triz_data/TRIZ_contradictions.csv'
+INTO TABLE contradictions
+FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS;
+
+LOAD DATA INFILE '/triz_data/TRIZ_principles.csv'
+INTO TABLE principles
+FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS;
