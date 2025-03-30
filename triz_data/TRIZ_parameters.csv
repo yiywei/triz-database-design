@@ -1,40 +1,40 @@
 Parameters
-Weight of moving object
-Weight of stationary object
-Length of moving object
-Length of stationary object
-Area of moving object
-Area of stationary object
-Volume of moving object
-Volume of stationary object
+Weight of Moving Object
+Weight of Stationary Object
+Length of Moving Object
+Length of Stationary Object
+Area of Moving Object
+Area of Stationary Object
+Volume of Moving Object
+Volume of Stationary Object
+Shape
+Amount of Substance
+Amount of Information
+Duration of Moving Object
+Duration of Stationary Object
 Speed
 Force
-Stress
-Shape
-Stability of the object
-Strength
-Durability of moving object
-Durability of non moving object
-Temperature
-Illumination intensity
-Use of energy by moving
-Use of energy by stationary
+Energy Used  by Moving
+Energy Used  by Stationary
 Power
-Loss of Energy
-Loss of substance
-Loss of Information
-Loss of Time
-Quantity of substance/the matter
-Reliability
-Measurement accuracy
-Manufacturing precision
-Object-affected harmful
+Stress
+Strength
+Stability
+Temperature
+Illumination  Intensity
+Loss  of Substance
+Loss  of Time
+Loss  of Energy
+Loss  of Information
 Object-generated harmful
-Ease of manufacture
+Adaptability/  Versatility
 Ease of operation
+Reliability
 Ease of repair
-Adaptability or versatility
-Device complexity
-Difficulty of detecting
-Extent of automation
+Manufacturability
+Manufacturing precision
+Automation
 Productivity
+Device complexity
+Ability to  Detect/Measure
+Measurement Precision

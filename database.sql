@@ -1,5 +1,5 @@
 CREATE TABLE patent (
-    patent_id INT PRIMARY KEY,
+    patent_id INT AUTO_INCREMENT PRIMARY KEY,
     patent_title VARCHAR(255),
     patent_number VARCHAR(100),
     patent_filename VARCHAR(100),
@@ -18,7 +18,7 @@ CREATE TABLE patent (
 );
 
 CREATE TABLE patent_analysis (
-    analysis_id INT PRIMARY KEY,
+    analysis_id INT AUTO_INCREMENT PRIMARY KEY,
     patent_id INT NOT NULL,
     contradiction_id INT,
     principle_id INT,
@@ -34,7 +34,7 @@ CREATE TABLE patent_analysis (
 );
 
 CREATE TABLE LLM_suggestion (
-    suggestion_id INT PRIMARY KEY,
+    suggestion_id INT AUTO_INCREMENT PRIMARY KEY,
     principle_id INT NOT NULL,
     contradiction_id INT NOT NULL,
     FOREIGN KEY (principle_id) REFERENCES principles(principle_id),
@@ -42,7 +42,7 @@ CREATE TABLE LLM_suggestion (
 );
 
 CREATE TABLE patent_citation (
-    citation_id INT PRIMARY KEY,
+    citation_id INT AUTO_INCREMENT PRIMARY KEY,
     patent_id INT NOT NULL,
     cited_patent_number VARCHAR(255),
     citation_context LONGTEXT,
@@ -52,7 +52,7 @@ CREATE TABLE patent_citation (
 );
 
 CREATE TABLE contradictions (
-    contradiction_id INT PRIMARY KEY,
+    contradiction_id INT AUTO_INCREMENT PRIMARY KEY,
     improving INT NOT NULL,
     worsening INT NOT NULL,
     FOREIGN KEY (improving) REFERENCES parameters(parameter_id),
@@ -60,19 +60,19 @@ CREATE TABLE contradictions (
 );
 
 CREATE TABLE parameters (
-    parameter_id INT PRIMARY KEY,
+    parameter_id INT AUTO_INCREMENT PRIMARY KEY,
     parameter_name VARCHAR(255)
 );
 
 CREATE TABLE principles (
-    principle_id INT PRIMARY KEY,
+    principle_id INT AUTO_INCREMENT PRIMARY KEY,
     principle_name VARCHAR(255)
 );
 
 CREATE TABLE triz_matrix (
-    matrix_id INT PRIMARY KEY,
+    matrix_id INT AUTO_INCREMENT PRIMARY KEY,
     contradiction_id INT NOT NULL,
-    principle_id INT NOT NULL,
+    principles TEXT NOT NULL,
     FOREIGN KEY (contradiction_id) REFERENCES contradictions(contradiction_id),
     FOREIGN KEY (principle_id) REFERENCES principles(principle_id)
 );
@@ -94,3 +94,10 @@ INTO TABLE principles
 FIELDS TERMINATED BY ','
 LINES TERMINATED BY '\n'
 IGNORE 1 ROWS;
+
+LOAD DATA INFILE '/path/to/TRIZ_matrix.csv'
+INTO TABLE TRIZ_matrix
+FIELDS TERMINATED BY ',' 
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS
+(contradiction_id, principles);
